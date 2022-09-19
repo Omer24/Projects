@@ -1,82 +1,78 @@
 ﻿using System;
 
-namespace degisken
+namespace operatorler
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            byte b = 5; // 1 byte
-            sbyte c = 6; // 1 byte
+            Console.WriteLine("***** Atama Ve İşlemli Atama Operatörleri *****");
+            // Atama ve İşlemli Atama
+            int x = 3;
+            int y = 3;
+            y = y+2;
 
-            short s = 5; // 2 byte
-            ushort us = 5; // 2 byte
+            Console.WriteLine(y);
+            y += 2;
+            Console.WriteLine(y);
+            y /= 1;
+            Console.WriteLine(y);
+            x *= 2;
+            Console.WriteLine(x);
 
-            Int16 i16 = 2; // 2 byte
-            int i = 2; // 4 byte
-            Int32 i32 = 2; // 4 byte
-            Int64 i64 = 2; // 8 byte
+            Console.WriteLine("***** Mantıksal Operatörler *****");
+            // Mantıksal Operatörler
+            // ||, &&&, !
+            bool isSuccess = true;
+            bool isCompleted = false;
 
-            uint ui = 2; // 4 byte
-            long l = 4; // 8 byte
-            ulong ul = 4; // 8 byte
+            if(isSuccess && isCompleted)
+                Console.WriteLine("Perfect!");
 
-            // Reel Sayılar
-            float f = 5; // 4 byte
-            double d = 5; // 8 byte
-            decimal de = 5; // 16 byte
+            if(isSuccess || isCompleted)
+                Console.WriteLine("Great!");
 
-            char ch ='2'; // 2 byte
-            string str ="Ömer"; // Sınırsız
+            if (isSuccess && !isCompleted)
+                Console.WriteLine("Fine!");
 
-            bool b1 = true;
-            bool b2 = false;
+            Console.WriteLine("***** İlişkisel Operatörler *****");
+            // İlişkisel Operatörler
+            // <, >, <=, >=, ==, !=
+            int a = 3;
+            int b = 4;
+            bool sonuc = a<b; 
 
-            DateTime dt = DateTime.Now;
+            Console.WriteLine(sonuc);
+            sonuc = a>b;
+            Console.WriteLine(sonuc);
+            sonuc = a>=b;
+            Console.WriteLine(sonuc);
+            sonuc = a<=b;
+            Console.WriteLine(sonuc);
+            sonuc = a==b;
+            Console.WriteLine(sonuc);
+            sonuc = a!=b;
+            Console.WriteLine(sonuc);
 
-            Console.WriteLine(dt);
+            Console.WriteLine("***** Aritmatik Operatörler *****");
+            // Aritmatik Operatörler
+            // /, *, +, - 
+            int sayi1 = 10;
+            int sayi2 = 5;
+            int sonuc1 = sayi1/sayi2;
+            Console.WriteLine(sonuc1);
+            sonuc1 = sayi1*sayi2;
+            Console.WriteLine(sonuc1);
+            sonuc1 = sayi1+sayi2;
+            Console.WriteLine(sonuc1);
+            sonuc1 = sayi1++;
+            Console.WriteLine(sayi1);
 
-            object o1 = "x";
-            object o2 = 'y';
-            object o3 = 4;
-            object o4 = 4.3;
+            // % : mod alır
 
-            // String İfadeler
-            string str1 = string.Empty;
-            str1 = "Ömer Akyol";
-            string ad = "Ömer";
-            string soyad = "Akyol";
-            string tamIsim = ad + " " + soyad;
-
-            // İnteger Tanımlama Şekilleri
-            int integer1 = 5;
-            int integer2 = 3;
-            int integer3 = integer1 * integer2;
-
-            // Boolean
-            bool bool1 = 10>2;
-
-            // Değişken Dönüşümleri
-            string str20 = "20";
-            int int20 = 20;
-            string yeniDeger = str20 + int20.ToString();
-            Console.WriteLine(yeniDeger); // Çıktısı 2020
-
-            int int21 = int20 + Convert.ToInt32(str20);
-            Console.WriteLine(int21); // Çıktısı 40
-             
-            int int22 = int20 + int.Parse(str20); // Çıktısı 40
-
-            // DateTime
-            string datetime = DateTime.Now.ToString("dd.MM.yyyy");
-            Console.WriteLine(datetime);
-
-            string datetime2 = DateTime.Now.ToString("dd/MM/yyyy");
-            Console.WriteLine(datetime2);
-            
-            // Saat
-            string hour = DateTime.Now.ToString("HH:mm");
-            Console.WriteLine(hour);
+            int sonuc2 = 20%3;
+            Console.WriteLine(sonuc2);
+    
         }
     }
 }
